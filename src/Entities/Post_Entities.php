@@ -5,12 +5,35 @@ namespace App\Entities;
 class Post_Entities
 {
     private $id;
-    private $titel;
+    private $title;
     private $content;
     private $category;
     private $view;
     private $image;
     private $date;
+
+    public function __construct($array)
+    {
+        $this->id = ($array["id"]);
+        $this->title = ($array["title"]);
+        $this->content = ($array["content"]);
+        $this->category = ($array["category"]);
+        $this->view = ($array["view"]);
+        $this->image = ($array["image"]);
+        $this->date = ($array["date"]);
+    }
+
+    public function toArray(){
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'content' => $this->content,
+            'category' => $this->category,
+            'view' => $this->view,
+            'image' => $this->image,
+            'date' => $this->date
+        ];
+    }
 
     #id
     public function set_id($id)
@@ -23,13 +46,13 @@ class Post_Entities
     }
 
     #titel
-    public function set_titel($titel)
+    public function set_titel($title)
     {
-        $this->titel = $titel;
+        $this->title = $title;
     }
     public function get_titel()
     {
-        return $this->titel;
+        return $this->title;
     }
 
     #content

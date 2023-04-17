@@ -11,6 +11,28 @@ class User_Entities
     private $password;
     private $date;
 
+    public function __construct($array)
+    {
+        $this->id = ($array["Id"]);
+        $this->first_name = ($array["first_name"]);
+        $this->last_name = ($array["last_name"]);
+        $this->email = ($array["email"]);
+        $this->password = ($array["password"]);
+        $this->date = ($array["date"]);
+    }
+
+    public function toArray()
+    {  return
+        [
+            'id' => $this->id,
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'email' => $this->email,
+            'password' => $this->password,
+            'date' => $this->date
+        ];
+    }
+
     #id
     public function set_id($id)
     {

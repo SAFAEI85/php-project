@@ -4,21 +4,43 @@ namespace App\Entities;
 
 class Setting_Entities
 {
-    private $titel;
+    private $title;
     private $keywords;
     private $description;
     private $author;
     private $logo;
     private $footer;
 
-    #titel
-    public function set_titel($titel)
+    public function __construct($array)
     {
-        $this->titel = $titel;
+        $this->title = ($array["titel"]);
+        $this->keywords = ($array["keywords"]);
+        $this->description = ($array["description"]);
+        $this->author = ($array["author"]);
+        $this->logo = ($array["logo"]);
+        $this->footer = ($array["footer"]);
+    }
+
+    public function toArray()
+    { return
+    [
+        'title' => $this->title,
+        'keywords' => $this->keywords,
+        'description' => $this->description,
+        'author' => $this->author,
+        'logo' => $this->logo,
+        'footer' => $this->footer
+    ];
+    }
+
+    #titel
+    public function set_titel($title)
+    {
+        $this->title = $title;
     }
     public function get_titel()
     {
-        return $this->titel;
+        return $this->title;
     }
 
     #keywords

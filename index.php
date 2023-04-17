@@ -3,5 +3,10 @@ require "./vendor/autoload.php";
 
 use App\Classes\Database;
 use App\Entities\Post_Entities;
- 
-$DB = new Database("posts" , Post_Entities::class);
+use App\Entities\Setting_Entities;
+
+$centos= new Database('posts',Post_Entities::class);
+//tamiz($centos->data);
+
+
+
